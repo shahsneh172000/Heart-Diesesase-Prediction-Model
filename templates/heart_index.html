@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <title> Heart Data </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style type="text/css">
+            .divcolor
+            {
+                
+                border-radius: 10px;
+                background-color: #f2f2f2;
+                padding: 20px;
+                margin-top: 50px;
+                margin-left: 250px;
+                margin-right: 250px;
+            }
+
+            input[type=number], select 
+            {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 5px 0;
+                display: block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=submit] {
+            width: 100%;
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+            background-color: #45a049;
+            }
+
+            .bold{
+                font-weight: 900;
+            }
+        </style>
+    </head>
+    <body style="background-color:  #4cdddd;">
+        <div class="w3-panel w3-yellow w3-bottombar w3-border-red w3-border">
+             <h2 style="text-align: center;" class="bold"> Heart Disease Prediction </h2>
+        </div>
+        <div class="divcolor">
+            <form action="{{ url_for('heart_pred') }}" method="post">
+                <div>
+                    <label for="age" class="bold"> Age : </label>
+                    <input type="number" name="age" min="15" max="120" required>
+                </div>
+                <br>
+                <div>
+                    <label for="sex" class="bold"> Sex : </label>
+                    <select name="sex" required>
+                        <option value="M"> Male </option>
+                        <option value="F"> Female </option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="bp" class="bold"> Blood Preature : </label>
+                    <input type="number" name="bp" min=60 max=300 required>
+                </div>
+                <br>
+                <div>
+                    <label for="chol" class="bold"> Cholesterol : </label>
+                    <input type="number" name="chol" min=80 max=600 required>
+                </div>
+                <br>
+                <div>
+                    <label for="h_rate" class="bold"> Max Heart Rate : </label>
+                    <input type="number" name="h_rate" min=40 max=400 required>
+                </div>
+                <br>
+                <div>
+                    <label for="fbs" class="bold"> Fasting Blood Sugar : </label>
+                    <input type="number" name="fbs" min=0 max=400 required>
+                </div>
+                <br>
+                <div>
+                    <label for="oldpeak" class="bold"> Oldpeak : </label>
+                    <input type="number" name="oldpeak" min=0 max=6 step="0.1" required>
+                </div>
+                <br>
+                <div>
+                    <label for="pain" class="bold"> Chest Pain Type :</label>
+                    <select name="pain">
+                        <option value="ASY"> Asymptomatic </option>
+                        <option value="ATA"> Atypical Angina </option>
+                        <option value="NAP"> Non-Anginal Pain </option>
+                        <option value="TA"> Typical Angina </option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="ecg" class="bold"> Resting ECG : </label>
+                    <select name="ecg">
+                        <option value="Normal"> Normal </option>
+                        <option value="LVH"> Left Ventricular Hypertrophy (LVH) </option>
+                        <option value="ST"> ST </option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="angina" class="bold"> Exercise Angina : </label>
+                    <select name="angina">
+                        <option value="Y"> Yes </option>
+                        <option value="N"> No </option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="slope" class="bold"> ST Slope : </label>
+                    <select name="slope">
+                        <option value="Flat"> Flat </option>
+                        <option value="Up"> Up </option>
+                        <option value="Down"> Down </option>
+                    </select>
+                </div>
+                <br><br>
+                <button class="w3-btn w3-block w3-red w3-centre-align bold"> Check My Heart </button>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title> Heart Data </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style type="text/css">
+            .divcolor
+            {
+                
+                border-radius: 10px;
+                background-color: #f2f2f2;
+                padding: 20px;
+                margin-top: 50px;
+                margin-left: 250px;
+                margin-right: 250px;
+            }
+
+            input[type=number], select 
+            {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 5px 0;
+                display: block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=submit] {
+            width: 100%;
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+            background-color: #45a049;
+            }
+
+            .bold{
+                font-weight: 900;
+            }
+        </style>
+    </head>
+    <body style="background-color:  #4cdddd;">
+        <div class="w3-panel w3-yellow w3-bottombar w3-border-red w3-border">
+             <h2 style="text-align: center;" class="bold"> Heart Disease Prediction </h2>
+        </div>
+        <div class="divcolor" style="font-size: large;font-weight: 700;">
+            <ul>
+                <li> Age : {{ data[0] }}</li>
+                <li> Sex : {{ data[1] }}</li>
+                <li> Blood Preature : {{ data[2] }}</li>
+                <li> Cholesterol : {{ data[3] }} </li>
+                <li> Max Heart Rate : {{ data[4] }} </li>
+                <li> Fasting Blood Sugar : {{ data[5] }} </li>
+                <li> Old Peak : {{ data[6] }} </li>
+                <li> Chest Pain Type : {{data[7]}}</li>
+                <li> Resting ECG : {{data[8]}}</li>
+                <li> Exercise Angina : {{data[9]}}</li>
+                <li> ST Slope : {{data[10]}}</li>
+            </ul>
+            <br>
+            <div>
+                <h2 style="text-align: center;" class="bold"> {{ pred_text }} </h2>
+            </div>
+        </div>
+        <br><br><br>
+        
+    </body>
+</html>
